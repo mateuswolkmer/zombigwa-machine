@@ -131,7 +131,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "11",
+			build: "20",
 			company: "HaxeFlixel",
 			file: "ld41_game",
 			fps: 60,
@@ -149,13 +149,13 @@ class ApplicationMain {
 					display: 0,
 					fullscreen: false,
 					hardware: true,
-					height: 720,
+					height: 540,
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: true,
 					title: "ld41_game",
 					vsync: false,
-					width: 1280,
+					width: 960,
 					x: null,
 					y: null
 				},
@@ -173,7 +173,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 1280, 720, "000000");
+		openfl.Lib.embed (null, 960, 540, "000000");
 		#end
 		#else
 		create ();
