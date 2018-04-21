@@ -30,20 +30,16 @@ class ApplicationMain {
 		var types = [];
 		
 		
-		urls.push ("assets/data/data-goes-here.txt");
-		types.push (lime.Assets.AssetType.TEXT);
+		urls.push ("assets/images/Character.png");
+		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
-		urls.push ("assets/images/images-go-here.txt");
-		types.push (lime.Assets.AssetType.TEXT);
+		urls.push ("assets/images/Zombie_1.png");
+		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
-		urls.push ("assets/music/music-goes-here.txt");
-		types.push (lime.Assets.AssetType.TEXT);
-		
-		
-		urls.push ("assets/sounds/sounds-go-here.txt");
-		types.push (lime.Assets.AssetType.TEXT);
+		urls.push ("assets/images/Zombie_2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
 		urls.push ("flixel/sounds/beep.mp3");
@@ -131,7 +127,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "10",
+			build: "36",
 			company: "HaxeFlixel",
 			file: "ld41_game",
 			fps: 60,
@@ -149,13 +145,13 @@ class ApplicationMain {
 					display: 0,
 					fullscreen: false,
 					hardware: true,
-					height: 480,
+					height: 540,
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: true,
 					title: "ld41_game",
 					vsync: false,
-					width: 640,
+					width: 960,
 					x: null,
 					y: null
 				},
@@ -173,7 +169,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 640, 480, "000000");
+		openfl.Lib.embed (null, 960, 540, "000000");
 		#end
 		#else
 		create ();

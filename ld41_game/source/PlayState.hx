@@ -3,16 +3,20 @@ package;
 import flixel.FlxState;
 import flixel.text.FlxText;
 
-class PlayState extends FlxState
-{
-	override public function create():Void
-	{
+import objects.Player;
+
+class PlayState extends FlxState {
+
+	private var player:Player;
+
+	override public function create():Void	{
 		super.create();
-		add(new FlxText(10,10,100,"teataetsata"));
+
+		player =  new Player(20,500);
+		add(player);
 	}
 
-	override public function update(elapsed:Float):Void
-	{
+	override public function update(elapsed:Float):Void	{
 		super.update(elapsed);
 	}
 }
