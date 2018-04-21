@@ -1,0 +1,13 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "flash debug",
+			"type": "fdb",
+			"request": "launch",
+			"program": "${workspaceRoot}/export/flash/bin/ld41_game.swf",
+			"preLaunchTask": "debug: flash",
+			"postDebugTask": "run: swf"
+		}
+	]
+}
