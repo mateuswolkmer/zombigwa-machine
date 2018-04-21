@@ -30,20 +30,16 @@ class ApplicationMain {
 		var types = [];
 		
 		
-		urls.push ("assets/data/data-goes-here.txt");
-		types.push (lime.Assets.AssetType.TEXT);
+		urls.push ("assets/images/Character.png");
+		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
-		urls.push ("assets/images/images-go-here.txt");
-		types.push (lime.Assets.AssetType.TEXT);
+		urls.push ("assets/images/Zombie_1.png");
+		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
-		urls.push ("assets/music/music-goes-here.txt");
-		types.push (lime.Assets.AssetType.TEXT);
-		
-		
-		urls.push ("assets/sounds/sounds-go-here.txt");
-		types.push (lime.Assets.AssetType.TEXT);
+		urls.push ("assets/images/Zombie_2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
 		urls.push ("flixel/sounds/beep.mp3");
@@ -131,7 +127,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "20",
+			build: "36",
 			company: "HaxeFlixel",
 			file: "ld41_game",
 			fps: 60,
