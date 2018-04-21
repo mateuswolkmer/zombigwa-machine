@@ -34,6 +34,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("assets/images/Character2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/Zombie_1.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -127,7 +131,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "36",
+			build: "61",
 			company: "HaxeFlixel",
 			file: "ld41_game",
 			fps: 60,

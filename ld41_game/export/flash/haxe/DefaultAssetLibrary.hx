@@ -56,6 +56,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -67,6 +68,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/images/Character.png", __ASSET__assets_images_character_png);
 		type.set ("assets/images/Character.png", AssetType.IMAGE);
+		className.set ("assets/images/Character2.png", __ASSET__assets_images_character2_png);
+		type.set ("assets/images/Character2.png", AssetType.IMAGE);
 		className.set ("assets/images/Zombie_1.png", __ASSET__assets_images_zombie_1_png);
 		type.set ("assets/images/Zombie_1.png", AssetType.IMAGE);
 		className.set ("assets/images/Zombie_2.png", __ASSET__assets_images_zombie_2_png);
@@ -89,6 +92,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		var id;
 		id = "assets/images/Character.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Character2.png";
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
@@ -144,6 +151,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/images/Character.png", __ASSET__assets_images_character_png);
 		type.set ("assets/images/Character.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Character2.png", __ASSET__assets_images_character2_png);
+		type.set ("assets/images/Character2.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/Zombie_1.png", __ASSET__assets_images_zombie_1_png);
 		type.set ("assets/images/Zombie_1.png", AssetType.IMAGE);
@@ -814,6 +824,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if flash
 
 @:keep @:bind #if display private #end class __ASSET__assets_images_character_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_character2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_zombie_1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_zombie_2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends flash.media.Sound { }
@@ -825,6 +836,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
 
 
 
@@ -845,6 +857,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 @:image("assets/images/Character.png") #if display private #end class __ASSET__assets_images_character_png extends lime.graphics.Image {}
+@:image("assets/images/Character2.png") #if display private #end class __ASSET__assets_images_character2_png extends lime.graphics.Image {}
 @:image("assets/images/Zombie_1.png") #if display private #end class __ASSET__assets_images_zombie_1_png extends lime.graphics.Image {}
 @:image("assets/images/Zombie_2.png") #if display private #end class __ASSET__assets_images_zombie_2_png extends lime.graphics.Image {}
 @:file("C:/HaxeToolkit/haxe/lib/flixel/4,3,0/assets/sounds/beep.mp3") #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends lime.utils.Bytes {}
