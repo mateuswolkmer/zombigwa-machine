@@ -60,6 +60,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -71,14 +77,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/Basic.tsx", __ASSET__assets_data_basic_tsx);
 		type.set ("assets/data/Basic.tsx", AssetType.TEXT);
+		className.set ("assets/data/Brain Machine.tsx", __ASSET__assets_data_brain_machine_tsx);
+		type.set ("assets/data/Brain Machine.tsx", AssetType.TEXT);
 		className.set ("assets/data/LD41Map.tmx", __ASSET__assets_data_ld41map_tmx);
 		type.set ("assets/data/LD41Map.tmx", AssetType.TEXT);
+		className.set ("assets/data/LD41Map3x.tmx", __ASSET__assets_data_ld41map3x_tmx);
+		type.set ("assets/data/LD41Map3x.tmx", AssetType.TEXT);
+		className.set ("assets/data/PlayerPlatform.tsx", __ASSET__assets_data_playerplatform_tsx);
+		type.set ("assets/data/PlayerPlatform.tsx", AssetType.TEXT);
+		className.set ("assets/images/Basic Tileset.png", __ASSET__assets_images_basic_tileset_png);
+		type.set ("assets/images/Basic Tileset.png", AssetType.IMAGE);
+		className.set ("assets/images/Brain_Machine.png", __ASSET__assets_images_brain_machine_png);
+		type.set ("assets/images/Brain_Machine.png", AssetType.IMAGE);
 		className.set ("assets/images/Character.png", __ASSET__assets_images_character_png);
 		type.set ("assets/images/Character.png", AssetType.IMAGE);
 		className.set ("assets/images/Character2.png", __ASSET__assets_images_character2_png);
 		type.set ("assets/images/Character2.png", AssetType.IMAGE);
 		className.set ("assets/images/Character_To_Left.png", __ASSET__assets_images_character_to_left_png);
 		type.set ("assets/images/Character_To_Left.png", AssetType.IMAGE);
+		className.set ("assets/images/Player_Platform.png", __ASSET__assets_images_player_platform_png);
+		type.set ("assets/images/Player_Platform.png", AssetType.IMAGE);
 		className.set ("assets/images/Zombie_1.png", __ASSET__assets_images_zombie_1_png);
 		type.set ("assets/images/Zombie_1.png", AssetType.IMAGE);
 		className.set ("assets/images/Zombie_2.png", __ASSET__assets_images_zombie_2_png);
@@ -104,10 +122,30 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/data/Brain Machine.tsx";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
 		id = "assets/data/LD41Map.tmx";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/data/LD41Map3x.tmx";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "assets/data/PlayerPlatform.tsx";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "assets/images/Basic Tileset.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Brain_Machine.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Character.png";
 		path.set (id, id);
 		
@@ -117,6 +155,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Character_To_Left.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Player_Platform.png";
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
@@ -173,8 +215,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 		className.set ("assets/data/Basic.tsx", __ASSET__assets_data_basic_tsx);
 		type.set ("assets/data/Basic.tsx", AssetType.TEXT);
 		
+		className.set ("assets/data/Brain Machine.tsx", __ASSET__assets_data_brain_machine_tsx);
+		type.set ("assets/data/Brain Machine.tsx", AssetType.TEXT);
+		
 		className.set ("assets/data/LD41Map.tmx", __ASSET__assets_data_ld41map_tmx);
 		type.set ("assets/data/LD41Map.tmx", AssetType.TEXT);
+		
+		className.set ("assets/data/LD41Map3x.tmx", __ASSET__assets_data_ld41map3x_tmx);
+		type.set ("assets/data/LD41Map3x.tmx", AssetType.TEXT);
+		
+		className.set ("assets/data/PlayerPlatform.tsx", __ASSET__assets_data_playerplatform_tsx);
+		type.set ("assets/data/PlayerPlatform.tsx", AssetType.TEXT);
+		
+		className.set ("assets/images/Basic Tileset.png", __ASSET__assets_images_basic_tileset_png);
+		type.set ("assets/images/Basic Tileset.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Brain_Machine.png", __ASSET__assets_images_brain_machine_png);
+		type.set ("assets/images/Brain_Machine.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/Character.png", __ASSET__assets_images_character_png);
 		type.set ("assets/images/Character.png", AssetType.IMAGE);
@@ -184,6 +241,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/images/Character_To_Left.png", __ASSET__assets_images_character_to_left_png);
 		type.set ("assets/images/Character_To_Left.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Player_Platform.png", __ASSET__assets_images_player_platform_png);
+		type.set ("assets/images/Player_Platform.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/Zombie_1.png", __ASSET__assets_images_zombie_1_png);
 		type.set ("assets/images/Zombie_1.png", AssetType.IMAGE);
@@ -854,10 +914,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if flash
 
 @:keep @:bind #if display private #end class __ASSET__assets_data_basic_tsx extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_brain_machine_tsx extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_ld41map_tmx extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_ld41map3x_tmx extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_playerplatform_tsx extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_basic_tileset_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_brain_machine_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_character_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_character2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_character_to_left_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_player_platform_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_zombie_1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_zombie_2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends flash.media.Sound { }
@@ -869,6 +935,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
+
+
 
 
 
@@ -893,10 +965,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 @:file("assets/data/Basic.tsx") #if display private #end class __ASSET__assets_data_basic_tsx extends lime.utils.Bytes {}
+@:file("assets/data/Brain Machine.tsx") #if display private #end class __ASSET__assets_data_brain_machine_tsx extends lime.utils.Bytes {}
 @:file("assets/data/LD41Map.tmx") #if display private #end class __ASSET__assets_data_ld41map_tmx extends lime.utils.Bytes {}
+@:file("assets/data/LD41Map3x.tmx") #if display private #end class __ASSET__assets_data_ld41map3x_tmx extends lime.utils.Bytes {}
+@:file("assets/data/PlayerPlatform.tsx") #if display private #end class __ASSET__assets_data_playerplatform_tsx extends lime.utils.Bytes {}
+@:image("assets/images/Basic Tileset.png") #if display private #end class __ASSET__assets_images_basic_tileset_png extends lime.graphics.Image {}
+@:image("assets/images/Brain_Machine.png") #if display private #end class __ASSET__assets_images_brain_machine_png extends lime.graphics.Image {}
 @:image("assets/images/Character.png") #if display private #end class __ASSET__assets_images_character_png extends lime.graphics.Image {}
 @:image("assets/images/Character2.png") #if display private #end class __ASSET__assets_images_character2_png extends lime.graphics.Image {}
 @:image("assets/images/Character_To_Left.png") #if display private #end class __ASSET__assets_images_character_to_left_png extends lime.graphics.Image {}
+@:image("assets/images/Player_Platform.png") #if display private #end class __ASSET__assets_images_player_platform_png extends lime.graphics.Image {}
 @:image("assets/images/Zombie_1.png") #if display private #end class __ASSET__assets_images_zombie_1_png extends lime.graphics.Image {}
 @:image("assets/images/Zombie_2.png") #if display private #end class __ASSET__assets_images_zombie_2_png extends lime.graphics.Image {}
 @:file("C:/HaxeToolkit/haxe/lib/flixel/4,3,0/assets/sounds/beep.mp3") #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends lime.utils.Bytes {}
