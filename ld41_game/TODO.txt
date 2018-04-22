@@ -1,0 +1,4 @@
+1. Projectile hitting Zombie => Zombie disapear and Head flies in direction where Projectile flew before
+2. Head bouncing of the wall
+3. BrainMachine recognize Heads     3.1 BrainMachine evaluate sequence
+4. Add Display things (Show sequence, Lifes, etc.)

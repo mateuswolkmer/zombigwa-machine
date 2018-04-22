@@ -8,11 +8,11 @@ import flixel.addons.editors.tiled.TiledTileLayer;
 import flixel.tile.FlxTilemap;
 import flixel.FlxObject;
 import flixel.FlxG;
+import flixel.group.FlxGroup;
 
 import objects.Player;
-import objects.Zombie1;
-import objects.Zombie2;
-import utils.ZombieGenerator;
+import utils.FormationParser;
+import objects.BrainMachine;
 
 class PlayState extends FlxState {
 
@@ -24,13 +24,10 @@ class PlayState extends FlxState {
 	private var mPlattform:FlxTilemap;
 
 	public var player:Player;
-
-	private var zombieGenerator:ZombieGenerator = new ZombieGenerator();
+	private var brainMachine:BrainMachine;
 
 	override public function create():Void	{
 		super.create();
-
-		FlxG.debugger.drawDebug = true;
 
 		map = new TiledMap("assets/data/Level.tmx");
 
@@ -49,8 +46,8 @@ class PlayState extends FlxState {
 		mBasics.setTileProperties(3, FlxObject.ANY);
 		mBottomWalls.setTileProperties(10, FlxObject.ANY);
 
-		for (i in 2...16) mPlattform.setTileProperties(i, FlxObject.NONE);
-		mPlattform.setTileProperties(1, FlxObject.ANY);
+		for (i in 1...16) mPlattform.setTileProperties(i, FlxObject.NONE);
+		mPlattform.setTileProperties(2, FlxObject.ANY);
 		
 		add(mBasics);
 		add(mOverlay);
@@ -60,8 +57,15 @@ class PlayState extends FlxState {
 		player =  new Player(310,30);
 		add(player);
 
-		add(zombieGenerator.create(1, 1));
-		add(zombieGenerator.create(2, 5));
+		add(player.projectiles);
+
+		brainMachine = new BrainMachine();
+		add(brainMachine);
+
+
+		var zombies:FlxGroup = FormationParser.parseStringAndGetZombies(FormationParser.firstFormation);
+
+		add(zombies);
 	}
 
 	override public function update(elapsed:Float):Void	{

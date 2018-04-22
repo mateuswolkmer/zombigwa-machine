@@ -8,6 +8,9 @@ import flixel.FlxObject;
 import flixel.animation.FlxAnimation;
 import flixel.animation.FlxAnimationController;
 import openfl.events.MouseEvent;
+import flixel.group.FlxGroup;
+
+import objects.Projectile;
 
 class Player extends FlxSprite {
     // Player maximum health
@@ -19,15 +22,17 @@ class Player extends FlxSprite {
     // Check if a shoot action occurs
     public var isShooting:Bool = false;
 
+    public var projectiles:FlxGroup = new FlxGroup();
+
     public function new(?X:Float=0, ?Y:Float=0) {
         super(X, Y);
         // Loads graphics
         loadGraphic(AssetPaths.Character_To_Left__png, true, 16, 16);
 
-        setSize(20, 10);
-        offset.set(-4, 6);
+        setSize(18, 10);
+        offset.set(-2, 6);
 
-        scale.set(2,2);
+        scale.set(1.5,1.5);
         // Set up the rotation
         setFacingFlip(FlxObject.LEFT, false, false);
         setFacingFlip(FlxObject.RIGHT, true, false);
@@ -132,8 +137,12 @@ class Player extends FlxSprite {
 
     public function shoot():Void {
         // Checks for mouse input
-        if(FlxG.mouse.justPressed)  
+        if(FlxG.mouse.justPressed) {
             isShooting = true;
+            var throwDir:FlxPoint = FlxG.mouse.getScreenPosition();
+
+            projectiles.add(new Projectile(this.x, this.y + this.height / 2, throwDir.subtract(this.x, this.y + this.height / 2)));
+        }
     }
     public function stopShoot():Void {
         isShooting = false;

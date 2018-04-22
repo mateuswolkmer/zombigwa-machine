@@ -9,22 +9,24 @@ import flixel.animation.FlxAnimation;
 import flixel.animation.FlxAnimationController;
 
 class Zombie extends FlxSprite {
-    // Player maximum health
-    public var maxHealth:Int;
-    // Player reangleining health
-    public var remHealth:Int;
-    // Player movement speed
-    public var speed:Float;
 
-    public function new(?X:Float=0, ?Y:Float=0) {
+    public var remHealth:Int;
+    public var speed:Float = 10;
+
+    public function new(?type:Int=1, ?X:Float=0, ?Y:Float=0) {
         super(X, Y);
-        // Randomized first movement
-        // if(Random.bool()) 
-        //     facing = FlxObject.LEFT;
-        // else
-        //     facing = FlxObject.RIGHT;
-        // Sets drag speed for when the movement stops
-        drag.x = drag.y = 1600;
+        switch(type) {
+            case 1:
+                loadGraphic(AssetPaths.Zombie_1__png, true, 16, 16);
+            case 2:
+                loadGraphic(AssetPaths.Zombie_2__png, true, 16, 16);
+            default: 
+                loadGraphic(AssetPaths.Zombie_1__png, true, 16, 16);
+        }
+             
+        animation.add("idle", [0], 1, true);
+        animation.add("walk", [0, 1, 2, 3], 10, true);
+    
     }
 
     override public function update(elapsed:Float):Void {
@@ -32,58 +34,16 @@ class Zombie extends FlxSprite {
         super.update(elapsed);
     }
 
-    public function movement():Void {        
-        var up:Bool = false;
-        var down:Bool = true;
-        var left:Bool = false;
-        var right:Bool = false;
-        // Doesn't move twice in the same direction
-        // if (facing != FlxObject.LEFT)
-        //     left = Random.bool();
-        // else if (facing != FlxObject.RIGHT)
-        //     right = Random.bool();
-                
-        if (left)
-            facing = FlxObject.LEFT;
-        else if (right)
-            facing = FlxObject.RIGHT;
+    public function movement():Void { 
+        var velAngle:Float = 90;
 
-        if (left)
-            facing = FlxObject.LEFT;
-        else if (right)
-            facing = FlxObject.RIGHT;
+        velocity.set(speed, 0);
+        velocity.rotate(FlxPoint.weak(0, 0), velAngle);
 
-        if (up || down || left || right) {
-            // Verifies the angle of movement to determine the diagonal speed
-            var angle:Float = 0;
-            if (up) {
-                angle = -90;
-                if (left)
-                    angle -= 45;
-                else if (right)
-                    angle += 45;
-            }
-            else if (down) {
-                angle = 90;
-                if (left)
-                    angle += 45;
-                else if (right)
-                    angle -= 45;
-            }
-            else if (left) {
-                angle = 180;
-            }
-            else if (right) {
-                angle = 0;
-            }
-            // Sets speed and rotation
-            velocity.set(speed, 0);
-            velocity.rotate(FlxPoint.weak(0, 0), angle);      
-        }
-        // Animates
         if (velocity.x == 0 && velocity.y == 0)
             animation.play("idle");
         else if (touching == FlxObject.NONE) 
             animation.play("walk");  
+        
     }
 }
