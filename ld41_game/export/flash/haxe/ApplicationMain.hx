@@ -30,6 +30,14 @@ class ApplicationMain {
 		var types = [];
 		
 		
+		urls.push ("assets/data/Basic.tsx");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/data/LD41Map.tmx");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
 		urls.push ("assets/images/Character.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -131,7 +139,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "61",
+			build: "78",
 			company: "HaxeFlixel",
 			file: "ld41_game",
 			fps: 60,
