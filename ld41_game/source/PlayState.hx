@@ -32,7 +32,7 @@ class PlayState extends FlxState {
 	override public function update(elapsed:Float):Void	{
 		super.update(elapsed);
         if(FlxG.mouse.justPressed)  
-			grpZombies.forEachAlive(checkHit());
+			grpZombies.forEachAlive(checkHit);
 	}
 
 	private function checkHit(z:Zombie):Void
