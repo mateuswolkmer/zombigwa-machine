@@ -11,7 +11,7 @@ import utils.ZombieGenerator;
 class PlayState extends FlxState {
 
 	public var player:Player;
-	private var zombieGenerator:ZombieGenerator = new ZombieGenerator();;
+	private var zombieGenerator:ZombieGenerator = new ZombieGenerator();
 
 	override public function create():Void	{
 		super.create();
