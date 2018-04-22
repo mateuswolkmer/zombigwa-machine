@@ -10,6 +10,7 @@ import flixel.FlxObject;
 import flixel.FlxG;
 
 import objects.Player;
+<<<<<<< HEAD
 import objects.Zombie1;
 import objects.Zombie2;
 // import utils.ZombieGenerator;
@@ -25,10 +26,20 @@ class PlayState extends FlxState {
 
 	public var player:Player;
 	// private var zombieGenerator:ZombieGenerator;
+=======
+import objects.Zombie;
+import utils.ZombieGenerator;
+
+class PlayState extends FlxState {
+
+	public var player:Player = new Player(900,10);
+	private var zombieGenerator:ZombieGenerator = new ZombieGenerator();
+>>>>>>> c7e2139f5c78bbd82643dbb68b48768d91d7352b
 
 	override public function create():Void	{
 		super.create();
 
+<<<<<<< HEAD
 		FlxG.debugger.drawDebug = true;
 
 		map = new TiledMap("assets/data/Level.tmx");
@@ -61,6 +72,12 @@ class PlayState extends FlxState {
 		// zombieGenerator = new ZombieGenerator(this);
 		// zombieGenerator.create(1, 1);
 		// zombieGenerator.create(2, 5);
+=======
+		add(player);
+
+		add(zombieGenerator.create(1, 1));
+		add(zombieGenerator.create(2, 5));
+>>>>>>> c7e2139f5c78bbd82643dbb68b48768d91d7352b
 	}
 
 	override public function update(elapsed:Float):Void	{
