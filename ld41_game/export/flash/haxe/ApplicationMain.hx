@@ -46,6 +46,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("assets/images/Character_To_Left.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/Zombie_1.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -139,7 +143,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "79",
+			build: "116",
 			company: "HaxeFlixel",
 			file: "ld41_game",
 			fps: 60,
@@ -151,13 +155,13 @@ class ApplicationMain {
 				
 				{
 					antialiasing: 0,
-					background: 0,
+					background: 2236962,
 					borderless: false,
 					depthBuffer: false,
 					display: 0,
 					fullscreen: false,
 					hardware: true,
-					height: 540,
+					height: 576,
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: true,
@@ -181,7 +185,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 960, 540, "000000");
+		openfl.Lib.embed (null, 960, 576, "222222");
 		#end
 		#else
 		create ();
