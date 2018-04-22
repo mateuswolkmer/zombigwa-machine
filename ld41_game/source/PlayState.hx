@@ -60,8 +60,8 @@ class PlayState extends FlxState {
 		player =  new Player(310,30);
 		add(player);
 
-		// add(zombieGenerator.create(1, 1));
-		// add(zombieGenerator.create(2, 5));
+		add(zombieGenerator.create(1, 1));
+		add(zombieGenerator.create(2, 5));
 	}
 
 	override public function update(elapsed:Float):Void	{

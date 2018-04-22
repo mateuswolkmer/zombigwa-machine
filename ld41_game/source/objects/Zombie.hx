@@ -19,10 +19,10 @@ class Zombie extends FlxSprite {
     public function new(?X:Float=0, ?Y:Float=0) {
         super(X, Y);
         // Randomized first movement
-        if(Random.bool()) 
-            facing = FlxObject.LEFT;
-        else
-            facing = FlxObject.RIGHT;
+        // if(Random.bool()) 
+        //     facing = FlxObject.LEFT;
+        // else
+        //     facing = FlxObject.RIGHT;
         // Sets drag speed for when the movement stops
         drag.x = drag.y = 1600;
     }
@@ -38,10 +38,10 @@ class Zombie extends FlxSprite {
         var left:Bool = false;
         var right:Bool = false;
         // Doesn't move twice in the same direction
-        if (facing != FlxObject.LEFT)
-            left = Random.bool();
-        else if (facing != FlxObject.RIGHT)
-            right = Random.bool();
+        // if (facing != FlxObject.LEFT)
+        //     left = Random.bool();
+        // else if (facing != FlxObject.RIGHT)
+        //     right = Random.bool();
                 
         if (left)
             facing = FlxObject.LEFT;
