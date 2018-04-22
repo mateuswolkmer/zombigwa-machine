@@ -22,10 +22,10 @@ class Zombie2 extends FlxSprite {
         loadGraphic(AssetPaths.Zombie_2__png, true, 16, 16);
         scale.set(3, 3);
         // Randomized first movement
-        if(Random.bool()) 
-            facing = FlxObject.LEFT;
-        else
-            facing = FlxObject.RIGHT;
+        // if(Random.bool()) 
+        //     facing = FlxObject.LEFT;
+        // else
+        //     facing = FlxObject.RIGHT;
         // Set up animation        
         animation.add("idle", [0], 1, true);
         animation.add("walk", [0, 1, 2, 3], 10, true);
@@ -44,10 +44,10 @@ class Zombie2 extends FlxSprite {
         var left:Bool = false;
         var right:Bool = false;
         // Doesn't move twice in the same direction
-        if (facing != FlxObject.LEFT)
-            left = Random.bool();
-        else if (facing != FlxObject.RIGHT)
-            right = Random.bool();
+        // if (facing != FlxObject.LEFT)
+        //     left = Random.bool();
+        // else if (facing != FlxObject.RIGHT)
+        //     right = Random.bool();
                 
         if (left)
             facing = FlxObject.LEFT;

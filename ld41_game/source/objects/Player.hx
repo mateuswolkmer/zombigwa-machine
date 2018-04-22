@@ -14,7 +14,7 @@ class Player extends FlxSprite {
     // Player reangleining health
     public var remHealth:Int = 100;
     // Player movement speed
-    public var speed:Float = 300;
+    public var speed:Float = 100;
     // Check if a shoot action occurs
     public var isShooting:Bool = false;
 
@@ -22,13 +22,17 @@ class Player extends FlxSprite {
         super(X, Y);
         // Loads graphics
         loadGraphic(AssetPaths.Character_To_Left__png, true, 16, 16);
-        scale.set(3, 3);
+
+        setSize(20, 10);
+        offset.set(-4, 6);
+
+        scale.set(2,2);
         // Set up the rotation
         // setFacingFlip(FlxObject.UP, false, false);
         // setFacingFlip(FlxObject.DOWN, false, true);
         // Set up animation
         var walkingSpeed:Int = Std.int(speed/30.0);
-        animation.add("idle", [0, 6], 1, true);
+        animation.add("idle", [0], 1, true);
         animation.add("walk_up", [0, 1, 2, 3, 4, 5], walkingSpeed, true);
         animation.add("walk_down", [5, 4, 3, 2, 1, 0], walkingSpeed, true);
         animation.add("shoot_straight", [6, 7, 6], 20, false);
