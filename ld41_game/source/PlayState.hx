@@ -10,13 +10,12 @@ import utils.ZombieGenerator;
 
 class PlayState extends FlxState {
 
-	public var player:Player;
+	public var player:Player = new Player(900,10);
 	private var zombieGenerator:ZombieGenerator = new ZombieGenerator();
 
 	override public function create():Void	{
 		super.create();
 
-		player =  new Player(900,10);
 		add(player);
 
 		add(zombieGenerator.create(1, 1));

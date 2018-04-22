@@ -7,6 +7,7 @@ import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.animation.FlxAnimation;
 import flixel.animation.FlxAnimationController;
+import openfl.events.MouseEvent;
 
 class Player extends FlxSprite {
     // Player maximum health
@@ -24,13 +25,15 @@ class Player extends FlxSprite {
         loadGraphic(AssetPaths.Character_To_Left__png, true, 16, 16);
         scale.set(3, 3);
         // Set up the rotation
-        // setFacingFlip(FlxObject.UP, false, false);
-        // setFacingFlip(FlxObject.DOWN, false, true);
+        setFacingFlip(FlxObject.LEFT, false, false);
+        setFacingFlip(FlxObject.RIGHT, true, false);
         // Set up animation
         var walkingSpeed:Int = Std.int(speed/30.0);
         animation.add("idle", [0, 6], 1, true);
+        
         animation.add("walk_up", [0, 1, 2, 3, 4, 5], walkingSpeed, true);
         animation.add("walk_down", [5, 4, 3, 2, 1, 0], walkingSpeed, true);
+
         animation.add("shoot_straight", [6, 7, 6], 20, false);
         animation.add("shoot_up", [8, 9, 8], 20, false);
         animation.add("shoot_down", [10, 11, 10], 20, false);
@@ -89,11 +92,29 @@ class Player extends FlxSprite {
         }
         // Animates
         if(isShooting) {
-            // ADD CHECK FOR MOUSE POSITION AND ANGLE
-            if(animation.curAnim.name != "shoot_straight")
-                animation.play("shoot_straight");
-            if(animation.finished)
+            // Cheeck for mouse position on click to determine animation
+            if(animation.curAnim.name != "shoot_straight" &&
+               animation.curAnim.name != "shoot_up" &&
+               animation.curAnim.name != "shoot_down") {
+                var playerPos:FlxPoint = this.getPosition();
+                var mousePos:FlxPoint = FlxG.mouse.getPosition();
+                
+                if((mousePos.y - playerPos.y) > 50)
+                    animation.play("shoot_down");
+                else if((mousePos.y - playerPos.y) < -50)
+                    animation.play("shoot_up");
+                else
+                    animation.play("shoot_straight");
+
+                if((mousePos.x - playerPos.x) > 0)
+                    facing = FlxObject.RIGHT;
+                else
+                    facing = FlxObject.LEFT;
+            }
+            if(animation.finished) {
                 stopShoot();
+                facing = FlxObject.LEFT;
+            }
         }
         else if (velocity.x == 0 && velocity.y == 0)
             animation.play("idle");
