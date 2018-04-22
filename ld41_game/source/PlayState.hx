@@ -2,6 +2,9 @@ package;
 
 import flixel.FlxState;
 import flixel.text.FlxText;
+import flixel.group.FlxGroup;
+import flixel.math.FlxPoint;
+import flixel.FlxG;
 import haxe.Timer;
 import flixel.addons.editors.tiled.TiledMap;
 import flixel.addons.editors.tiled.TiledTileLayer;
@@ -25,6 +28,8 @@ class PlayState extends FlxState {
 
 	public var player:Player;
 	private var brainMachine:BrainMachine;
+
+	private var grpZombies:FlxTypedGroup<Zombie> = new FlxTypedGroup<Zombie>();
 
 	override public function create():Void	{
 		super.create();
@@ -57,6 +62,7 @@ class PlayState extends FlxState {
 		player =  new Player(310,30);
 		add(player);
 
+<<<<<<< HEAD
 		add(player.projectiles);
 
 		brainMachine = new BrainMachine();
@@ -66,13 +72,30 @@ class PlayState extends FlxState {
 		var zombies:FlxGroup = FormationParser.parseStringAndGetZombies(FormationParser.firstFormation);
 
 		add(zombies);
+=======
+		grpZombies.add(zombieGenerator.create(1, 1));
+		grpZombies.add(zombieGenerator.create(2, 3));
+		grpZombies.add(zombieGenerator.create(1, 5));
+		add(grpZombies);
+>>>>>>> fe856b47d5ec3883850d0252a17309b915a82041
 	}
 
 	override public function update(elapsed:Float):Void	{
 		super.update(elapsed);
 
-		 FlxG.collide(player, mBasics);
-		 FlxG.collide(player, mBottomWalls);
-		 FlxG.collide(player, mPlattform);
+		FlxG.collide(player, mBasics);
+		FlxG.collide(player, mBottomWalls);
+		FlxG.collide(player, mPlattform);
+		
+        if(FlxG.mouse.justPressed)  
+			grpZombies.forEachAlive(checkHit);
+	}
+
+	private function checkHit(z:Zombie):Void
+	{
+		// if (FlxG.mouse.getPosition.ray(z.getMidpoint(), player.getMidpoint()))
+		// {
+		// 	z.destroy;
+		// }
 	}
 }
