@@ -57,6 +57,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -66,6 +68,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("assets/data/Basic.tsx", __ASSET__assets_data_basic_tsx);
+		type.set ("assets/data/Basic.tsx", AssetType.TEXT);
+		className.set ("assets/data/LD41Map.tmx", __ASSET__assets_data_ld41map_tmx);
+		type.set ("assets/data/LD41Map.tmx", AssetType.TEXT);
 		className.set ("assets/images/Character.png", __ASSET__assets_images_character_png);
 		type.set ("assets/images/Character.png", AssetType.IMAGE);
 		className.set ("assets/images/Character2.png", __ASSET__assets_images_character2_png);
@@ -91,6 +97,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/data/Basic.tsx";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "assets/data/LD41Map.tmx";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
 		id = "assets/images/Character.png";
 		path.set (id, id);
 		
@@ -148,6 +162,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		
+		className.set ("assets/data/Basic.tsx", __ASSET__assets_data_basic_tsx);
+		type.set ("assets/data/Basic.tsx", AssetType.TEXT);
+		
+		className.set ("assets/data/LD41Map.tmx", __ASSET__assets_data_ld41map_tmx);
+		type.set ("assets/data/LD41Map.tmx", AssetType.TEXT);
 		
 		className.set ("assets/images/Character.png", __ASSET__assets_images_character_png);
 		type.set ("assets/images/Character.png", AssetType.IMAGE);
@@ -823,6 +843,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if !display
 #if flash
 
+@:keep @:bind #if display private #end class __ASSET__assets_data_basic_tsx extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_ld41map_tmx extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_character_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_character2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_zombie_1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -843,6 +865,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font { public function new () { super (); name = "Nokia Cellphone FC Small"; } } 
 @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font { public function new () { super (); name = "Monsterrat"; } } 
 
@@ -856,6 +880,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux || cpp)
 
 
+@:file("assets/data/Basic.tsx") #if display private #end class __ASSET__assets_data_basic_tsx extends lime.utils.Bytes {}
+@:file("assets/data/LD41Map.tmx") #if display private #end class __ASSET__assets_data_ld41map_tmx extends lime.utils.Bytes {}
 @:image("assets/images/Character.png") #if display private #end class __ASSET__assets_images_character_png extends lime.graphics.Image {}
 @:image("assets/images/Character2.png") #if display private #end class __ASSET__assets_images_character2_png extends lime.graphics.Image {}
 @:image("assets/images/Zombie_1.png") #if display private #end class __ASSET__assets_images_zombie_1_png extends lime.graphics.Image {}
