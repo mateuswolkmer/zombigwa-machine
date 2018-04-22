@@ -30,27 +30,11 @@ class ApplicationMain {
 		var types = [];
 		
 		
-		urls.push ("assets/data/Basic.tsx");
+		urls.push ("assets/data/Level.tmx");
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
-		urls.push ("assets/data/Brain Machine.tsx");
-		types.push (lime.Assets.AssetType.TEXT);
-		
-		
-		urls.push ("assets/data/LD41Map.tmx");
-		types.push (lime.Assets.AssetType.TEXT);
-		
-		
-		urls.push ("assets/data/LD41Map3x.tmx");
-		types.push (lime.Assets.AssetType.TEXT);
-		
-		
-		urls.push ("assets/data/PlayerPlatform.tsx");
-		types.push (lime.Assets.AssetType.TEXT);
-		
-		
-		urls.push ("assets/images/Basic Tileset.png");
+		urls.push ("assets/images/BasicTileset.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
@@ -167,7 +151,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "161",
+			build: "1",
 			company: "HaxeFlixel",
 			file: "ld41_game",
 			fps: 60,

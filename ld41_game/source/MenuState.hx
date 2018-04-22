@@ -12,7 +12,7 @@ class MenuState extends FlxState {
 
 	override public function create():Void {
         // Create and scale button
-        btnPlay = new FlxButton(0,0,"Play",clickPlay);
+        btnPlay = new FlxButton(100,20,"Play",clickPlay);
         btnPlay.scale.x = btnPlay.scale.y = 5;
         btnPlay.updateHitbox();
         btnPlay.label.scale.x = btnPlay.label.scale.y = 5;

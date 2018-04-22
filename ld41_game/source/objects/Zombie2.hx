@@ -14,13 +14,13 @@ class Zombie2 extends Zombie {
         super(X, Y);
         // Loads graphics
         loadGraphic(AssetPaths.Zombie_2__png, true, 16, 16);
-        scale.set(3, 3);
+        // scale.set(3, 3);
         // Set up animation        
         animation.add("idle", [0], 1, true);
         animation.add("walk", [0, 1, 2, 3], 10, true);
 
         maxHealth = 300;
         remHealth = 300;
-        speed = 250;
+        speed = 50;
     }
 }

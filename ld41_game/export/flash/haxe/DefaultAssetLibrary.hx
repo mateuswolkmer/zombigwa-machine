@@ -62,10 +62,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
-		
-		
-		
-		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -75,18 +71,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
-		className.set ("assets/data/Basic.tsx", __ASSET__assets_data_basic_tsx);
-		type.set ("assets/data/Basic.tsx", AssetType.TEXT);
-		className.set ("assets/data/Brain Machine.tsx", __ASSET__assets_data_brain_machine_tsx);
-		type.set ("assets/data/Brain Machine.tsx", AssetType.TEXT);
-		className.set ("assets/data/LD41Map.tmx", __ASSET__assets_data_ld41map_tmx);
-		type.set ("assets/data/LD41Map.tmx", AssetType.TEXT);
-		className.set ("assets/data/LD41Map3x.tmx", __ASSET__assets_data_ld41map3x_tmx);
-		type.set ("assets/data/LD41Map3x.tmx", AssetType.TEXT);
-		className.set ("assets/data/PlayerPlatform.tsx", __ASSET__assets_data_playerplatform_tsx);
-		type.set ("assets/data/PlayerPlatform.tsx", AssetType.TEXT);
-		className.set ("assets/images/Basic Tileset.png", __ASSET__assets_images_basic_tileset_png);
-		type.set ("assets/images/Basic Tileset.png", AssetType.IMAGE);
+		className.set ("assets/data/Level.tmx", __ASSET__assets_data_level_tmx);
+		type.set ("assets/data/Level.tmx", AssetType.TEXT);
+		className.set ("assets/images/BasicTileset.png", __ASSET__assets_images_basictileset_png);
+		type.set ("assets/images/BasicTileset.png", AssetType.IMAGE);
 		className.set ("assets/images/Brain_Machine.png", __ASSET__assets_images_brain_machine_png);
 		type.set ("assets/images/Brain_Machine.png", AssetType.IMAGE);
 		className.set ("assets/images/Character.png", __ASSET__assets_images_character_png);
@@ -118,27 +106,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
-		id = "assets/data/Basic.tsx";
+		id = "assets/data/Level.tmx";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
-		id = "assets/data/Brain Machine.tsx";
-		path.set (id, id);
-		
-		type.set (id, AssetType.TEXT);
-		id = "assets/data/LD41Map.tmx";
-		path.set (id, id);
-		
-		type.set (id, AssetType.TEXT);
-		id = "assets/data/LD41Map3x.tmx";
-		path.set (id, id);
-		
-		type.set (id, AssetType.TEXT);
-		id = "assets/data/PlayerPlatform.tsx";
-		path.set (id, id);
-		
-		type.set (id, AssetType.TEXT);
-		id = "assets/images/Basic Tileset.png";
+		id = "assets/images/BasicTileset.png";
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
@@ -212,23 +184,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		var useManifest = false;
 		
-		className.set ("assets/data/Basic.tsx", __ASSET__assets_data_basic_tsx);
-		type.set ("assets/data/Basic.tsx", AssetType.TEXT);
+		className.set ("assets/data/Level.tmx", __ASSET__assets_data_level_tmx);
+		type.set ("assets/data/Level.tmx", AssetType.TEXT);
 		
-		className.set ("assets/data/Brain Machine.tsx", __ASSET__assets_data_brain_machine_tsx);
-		type.set ("assets/data/Brain Machine.tsx", AssetType.TEXT);
-		
-		className.set ("assets/data/LD41Map.tmx", __ASSET__assets_data_ld41map_tmx);
-		type.set ("assets/data/LD41Map.tmx", AssetType.TEXT);
-		
-		className.set ("assets/data/LD41Map3x.tmx", __ASSET__assets_data_ld41map3x_tmx);
-		type.set ("assets/data/LD41Map3x.tmx", AssetType.TEXT);
-		
-		className.set ("assets/data/PlayerPlatform.tsx", __ASSET__assets_data_playerplatform_tsx);
-		type.set ("assets/data/PlayerPlatform.tsx", AssetType.TEXT);
-		
-		className.set ("assets/images/Basic Tileset.png", __ASSET__assets_images_basic_tileset_png);
-		type.set ("assets/images/Basic Tileset.png", AssetType.IMAGE);
+		className.set ("assets/images/BasicTileset.png", __ASSET__assets_images_basictileset_png);
+		type.set ("assets/images/BasicTileset.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/Brain_Machine.png", __ASSET__assets_images_brain_machine_png);
 		type.set ("assets/images/Brain_Machine.png", AssetType.IMAGE);
@@ -913,12 +873,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if !display
 #if flash
 
-@:keep @:bind #if display private #end class __ASSET__assets_data_basic_tsx extends flash.utils.ByteArray { }
-@:keep @:bind #if display private #end class __ASSET__assets_data_brain_machine_tsx extends flash.utils.ByteArray { }
-@:keep @:bind #if display private #end class __ASSET__assets_data_ld41map_tmx extends flash.utils.ByteArray { }
-@:keep @:bind #if display private #end class __ASSET__assets_data_ld41map3x_tmx extends flash.utils.ByteArray { }
-@:keep @:bind #if display private #end class __ASSET__assets_data_playerplatform_tsx extends flash.utils.ByteArray { }
-@:keep @:bind #if display private #end class __ASSET__assets_images_basic_tileset_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_level_tmx extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_basictileset_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_brain_machine_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_character_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_character2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -947,10 +903,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
-
-
-
-
 @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font { public function new () { super (); name = "Nokia Cellphone FC Small"; } } 
 @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font { public function new () { super (); name = "Monsterrat"; } } 
 
@@ -964,12 +916,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux || cpp)
 
 
-@:file("assets/data/Basic.tsx") #if display private #end class __ASSET__assets_data_basic_tsx extends lime.utils.Bytes {}
-@:file("assets/data/Brain Machine.tsx") #if display private #end class __ASSET__assets_data_brain_machine_tsx extends lime.utils.Bytes {}
-@:file("assets/data/LD41Map.tmx") #if display private #end class __ASSET__assets_data_ld41map_tmx extends lime.utils.Bytes {}
-@:file("assets/data/LD41Map3x.tmx") #if display private #end class __ASSET__assets_data_ld41map3x_tmx extends lime.utils.Bytes {}
-@:file("assets/data/PlayerPlatform.tsx") #if display private #end class __ASSET__assets_data_playerplatform_tsx extends lime.utils.Bytes {}
-@:image("assets/images/Basic Tileset.png") #if display private #end class __ASSET__assets_images_basic_tileset_png extends lime.graphics.Image {}
+@:file("assets/data/Level.tmx") #if display private #end class __ASSET__assets_data_level_tmx extends lime.utils.Bytes {}
+@:image("assets/images/BasicTileset.png") #if display private #end class __ASSET__assets_images_basictileset_png extends lime.graphics.Image {}
 @:image("assets/images/Brain_Machine.png") #if display private #end class __ASSET__assets_images_brain_machine_png extends lime.graphics.Image {}
 @:image("assets/images/Character.png") #if display private #end class __ASSET__assets_images_character_png extends lime.graphics.Image {}
 @:image("assets/images/Character2.png") #if display private #end class __ASSET__assets_images_character2_png extends lime.graphics.Image {}

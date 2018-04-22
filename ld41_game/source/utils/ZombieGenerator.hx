@@ -9,8 +9,6 @@ typedef Lane = { x:Int, y:Int };
 
 class ZombieGenerator {
 
-    private var mainState:FlxState;
-
     private var lanes = [];
     private var lane1:Lane = { x:100, y:100 };
     private var lane2:Lane = { x:130, y:100 };
