@@ -16,6 +16,8 @@ import flixel.group.FlxGroup;
 import objects.Player;
 import utils.FormationParser;
 import objects.BrainMachine;
+import objects.Zombie;
+
 
 class PlayState extends FlxState {
 
@@ -62,7 +64,6 @@ class PlayState extends FlxState {
 		player =  new Player(310,30);
 		add(player);
 
-<<<<<<< HEAD
 		add(player.projectiles);
 
 		brainMachine = new BrainMachine();
@@ -72,12 +73,6 @@ class PlayState extends FlxState {
 		var zombies:FlxGroup = FormationParser.parseStringAndGetZombies(FormationParser.firstFormation);
 
 		add(zombies);
-=======
-		grpZombies.add(zombieGenerator.create(1, 1));
-		grpZombies.add(zombieGenerator.create(2, 3));
-		grpZombies.add(zombieGenerator.create(1, 5));
-		add(grpZombies);
->>>>>>> fe856b47d5ec3883850d0252a17309b915a82041
 	}
 
 	override public function update(elapsed:Float):Void	{
