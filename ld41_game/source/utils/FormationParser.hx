@@ -18,7 +18,7 @@ class FormationParser {
     private static var formationWidth:Int = 6;
 
     private static var tileSize:Int = 16;
-    private static var firstLaneXCoord:Int = 11;
+    private static var firstLaneXCoord:Int = 12;
 
     public function new() {}
 

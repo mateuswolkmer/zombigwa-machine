@@ -13,10 +13,8 @@ import flixel.FlxObject;
 import flixel.FlxG;
 import flixel.group.FlxGroup;
 
-import objects.Player;
+import objects.*;
 import utils.FormationParser;
-import objects.BrainMachine;
-import objects.Zombie;
 
 
 class PlayState extends FlxState {
@@ -24,41 +22,57 @@ class PlayState extends FlxState {
 	// TILEMAP
 	private var map:TiledMap;
  	private var mBasics:FlxTilemap;
-	private var mOverlay:FlxTilemap;
+	private var mWalls:FlxTilemap;
+	private var mPlatformWalls:FlxTilemap;
+	private var mSpikes:FlxTilemap;
 	private var mBottomWalls:FlxTilemap;
-	private var mPlattform:FlxTilemap;
+	private var mPlatform:FlxTilemap;
 
 	public var player:Player;
 	private var brainMachine:BrainMachine;
 
-	private var grpZombies:FlxTypedGroup<Zombie> = new FlxTypedGroup<Zombie>();
+	private var zombies:FlxGroup;
+	private var heads:FlxGroup = new FlxGroup();
 
 	override public function create():Void	{
 		super.create();
 
+		// FlxG.debugger.drawDebug = true;
+
 		map = new TiledMap("assets/data/Level.tmx");
 
 		mBasics = new FlxTilemap();
-		mOverlay = new FlxTilemap();
+		mWalls = new FlxTilemap();
+		mPlatformWalls = new FlxTilemap();
+		mSpikes = new FlxTilemap();
 		mBottomWalls = new FlxTilemap();
-		mPlattform = new FlxTilemap();
+		mPlatform = new FlxTilemap();
 
 		mBasics.loadMapFromArray(cast(map.getLayer("Basics"), TiledTileLayer).tileArray, map.width, map.height, AssetPaths.BasicTileset__png, map.tileWidth, map.tileHeight, OFF, 1, 1, 3);
-		mOverlay.loadMapFromArray(cast(map.getLayer("Overlay"), TiledTileLayer).tileArray, map.width, map.height, AssetPaths.BasicTileset__png, map.tileWidth, map.tileHeight, OFF, 1, 1, 3);
-		mBottomWalls.loadMapFromArray(cast(map.getLayer("Overlay 2"), TiledTileLayer).tileArray, map.width, map.height, AssetPaths.BasicTileset__png, map.tileWidth, map.tileHeight, OFF, 1, 1, 3);
-		mPlattform.loadMapFromArray(cast(map.getLayer("Platform"), TiledTileLayer).tileArray, map.width, map.height, AssetPaths.BasicTileset__png, map.tileWidth, map.tileHeight, OFF, 1, 1, 3);
+		mWalls.loadMapFromArray(cast(map.getLayer("Walls"), TiledTileLayer).tileArray, map.width, map.height, AssetPaths.BasicTileset__png, map.tileWidth, map.tileHeight, OFF, 1, 1, 3);
+		mPlatformWalls.loadMapFromArray(cast(map.getLayer("PlatformWalls"), TiledTileLayer).tileArray, map.width, map.height, AssetPaths.BasicTileset__png, map.tileWidth, map.tileHeight, OFF, 1, 1, 3);
+		mSpikes.loadMapFromArray(cast(map.getLayer("Spikes"), TiledTileLayer).tileArray, map.width, map.height, AssetPaths.BasicTileset__png, map.tileWidth, map.tileHeight, OFF, 1, 1, 3);
+		mBottomWalls.loadMapFromArray(cast(map.getLayer("BottomWalls"), TiledTileLayer).tileArray, map.width, map.height, AssetPaths.BasicTileset__png, map.tileWidth, map.tileHeight, OFF, 1, 1, 3);
+		mPlatform.loadMapFromArray(cast(map.getLayer("Platform"), TiledTileLayer).tileArray, map.width, map.height, AssetPaths.BasicTileset__png, map.tileWidth, map.tileHeight, OFF, 1, 1, 3);
 		
 		mBasics.follow();
 		
-		mBasics.setTileProperties(3, FlxObject.ANY);
-		mBottomWalls.setTileProperties(10, FlxObject.ANY);
 
-		for (i in 1...16) mPlattform.setTileProperties(i, FlxObject.NONE);
-		mPlattform.setTileProperties(2, FlxObject.ANY);
-		
+		for (i in 1...18) {
+			mWalls.setTileProperties(i, FlxObject.ANY, projectileWallCollide, Projectile);
+			mPlatformWalls.setTileProperties(i, FlxObject.ANY);
+			mBottomWalls.setTileProperties(i, FlxObject.ANY, projectileWallCollide, Projectile);
+			mSpikes.setTileProperties(i, FlxObject.ANY, projectileWallCollide, Projectile);
+
+			mBasics.setTileProperties(i, FlxObject.NONE);
+			mPlatform.setTileProperties(i, FlxObject.NONE);
+		} 
+
 		add(mBasics);
-		add(mOverlay);
-		add(mPlattform);
+		add(mWalls);
+		add(mPlatformWalls);
+		add(mSpikes);
+		add(mPlatform);
 		add(mBottomWalls);
 
 		player =  new Player(310,30);
@@ -70,27 +84,37 @@ class PlayState extends FlxState {
 		add(brainMachine);
 
 
-		var zombies:FlxGroup = FormationParser.parseStringAndGetZombies(FormationParser.firstFormation);
+		zombies = FormationParser.parseStringAndGetZombies(FormationParser.firstFormation);
 
 		add(zombies);
+		add(heads);
+	}
+
+	private function projectileWallCollide(TILE:FlxObject, PROJECTILE:FlxObject):Void
+	{
+		var projectile:Projectile = cast PROJECTILE;
+		projectile.kill();
 	}
 
 	override public function update(elapsed:Float):Void	{
 		super.update(elapsed);
 
-		FlxG.collide(player, mBasics);
+		if(FlxG.keys.justPressed.SPACE) FlxG.fullscreen = !FlxG.fullscreen;
+
+		FlxG.collide(player, mWalls);
+		FlxG.collide(player, mPlatformWalls);
 		FlxG.collide(player, mBottomWalls);
-		FlxG.collide(player, mPlattform);
 		
-        if(FlxG.mouse.justPressed)  
-			grpZombies.forEachAlive(checkHit);
+		FlxG.collide(player.projectiles, mWalls);
+		FlxG.collide(player.projectiles, mBottomWalls);
+		FlxG.collide(player.projectiles, mSpikes);
+
+		FlxG.overlap(player.projectiles, zombies, headCollideZombie);
 	}
 
-	private function checkHit(z:Zombie):Void
-	{
-		// if (FlxG.mouse.getPosition.ray(z.getMidpoint(), player.getMidpoint()))
-		// {
-		// 	z.destroy;
-		// }
+	private function headCollideZombie(projectile:Projectile, zombie:Zombie):Void {
+		heads.add(new Head(zombie.x, zombie.y, projectile.dir));
+		projectile.kill();
+		zombie.kill();
 	}
 }

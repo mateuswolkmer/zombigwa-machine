@@ -4,15 +4,15 @@ import flixel.FlxSprite;
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
 
-class Projectile extends FlxSprite {
-    public var dir:FlxPoint;
+class Head extends FlxSprite {
+    private var dir:FlxPoint;
     private var speed:Float = 300;
 
     public function new(X:Float, Y:Float, DIR:FlxPoint) {
         super(X, Y);
-        makeGraphic(4, 4, FlxColor.RED);
+        makeGraphic(8, 8, FlxColor.BLUE);
         
-        this.setPosition(X - this.width / 2, Y - this.height / 2);
+        this.setPosition(X, Y);
         drag.x = drag.y = 1800;
 
         this.dir = new FlxPoint(DIR.x, DIR.y);
