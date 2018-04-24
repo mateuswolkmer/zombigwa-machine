@@ -9,6 +9,7 @@ import flixel.animation.FlxAnimation;
 import flixel.animation.FlxAnimationController;
 import openfl.events.MouseEvent;
 import flixel.group.FlxGroup;
+import flixel.system.FlxSound;
 
 import objects.Projectile;
 
@@ -21,6 +22,7 @@ class Player extends FlxSprite {
     public var speed:Float = 100;
     // Check if a shoot action occurs
     public var isShooting:Bool = false;
+    private var shootSound:FlxSound;
 
     public var projectiles:FlxGroup = new FlxGroup();
 
@@ -28,9 +30,10 @@ class Player extends FlxSprite {
         super(X, Y);
         // Loads graphics
         loadGraphic(AssetPaths.Character_To_Left__png, true, 16, 16);
+        shootSound = FlxG.sound.load(AssetPaths.ld41_shot__ogg);
 
-        setSize(18, 10);
-        offset.set(-2, 6);
+        setSize(15, 1);
+        offset.set(-1, 7);
 
         scale.set(1.5,1.5);
         // Set up the rotation
@@ -138,6 +141,7 @@ class Player extends FlxSprite {
     public function shoot():Void {
         // Checks for mouse input
         if(FlxG.mouse.justPressed) {
+            shootSound.play();
             isShooting = true;
             var throwDir:FlxPoint = FlxG.mouse.getScreenPosition();
 

@@ -10,7 +10,7 @@ class Projectile extends FlxSprite {
 
     public function new(X:Float, Y:Float, DIR:FlxPoint) {
         super(X, Y);
-        makeGraphic(4, 4, FlxColor.RED);
+        makeGraphic(2, 2, FlxColor.RED);
         
         this.setPosition(X - this.width / 2, Y - this.height / 2);
         drag.x = drag.y = 1800;
